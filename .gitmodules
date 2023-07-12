@@ -1,0 +1,3 @@
+[submodule "tools/devops"]
+	path = tools/devops
+	url = https://github.com/sentenz/devops.git
