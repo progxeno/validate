@@ -18,7 +18,7 @@ setup-devops: ## Setup dependencies and tools for the devops service
 
 setup-devcontainer: ## Setup dependencies and tools for the vscode devcontainer
 	$(MAKE) update-submodule
-	$(MAKE) setup
+	$(MAKE) setup-devops
 .PHONY: setup-devcontainer
 
 setup-security: ## Setup dependencies and tools for the security service
@@ -145,6 +145,7 @@ teardown-submodule: ## Remove git submodules
 install-extensions: ## Install recommended VS Code extensions
 	code --list-extensions | xargs -L 1 code --install-extension
 .PHONY: install-extensions
+#ifdef MERGE_DEVOPS
 
 app-build: ## Perform application build
 	mkdir -p $(@D)/cmd/bin
@@ -182,3 +183,4 @@ test-cover: ## Perform code coverage
 	go tool cover -func=$(@D)/logs/test/coverage.log
 	go tool cover -html=$(@D)/logs/test/coverage.log
 .PHONY: test-cover
+#endif /* MERGE_DEVOPS */
