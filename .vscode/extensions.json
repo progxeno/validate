@@ -1,5 +1,4 @@
 {
-#ifndef MERGE_DEVOPS
   "recommendations": [
     "foxundermoon.shell-format",
     "vivaxy.vscode-conventional-commits",
@@ -33,10 +32,5 @@
     "bierner.markdown-mermaid",
     "aquasecurityofficial.trivy-vulnerability-scanner"
   ],
-	"unwantedRecommendations": []
+  "unwantedRecommendations": []
 }
-#else /* MERGE_DEVOPS */
-    "recommendations": [
-        "golang.go"
-    ]
-}#endif /* MERGE_DEVOPS */
